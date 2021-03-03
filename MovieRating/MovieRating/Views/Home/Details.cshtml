@@ -1,0 +1,18 @@
+﻿@model MovieRating.Models.MovieViewModel
+
+<h1>@Model.Title</h1>
+<p>@Model.OpeningCrawl</p>
+<p>
+    <h3>@Html.LabelFor(m => m.Score)</h3>
+    @using (Html.BeginForm())
+    {
+        <div>@Html.EditorFor(m => m.Score, new { htmlAttributes = new { @type = "number", @min = "0", @max = "10", @step = "1" } })</div>
+        <input type="submit" value="Submit score" id="btnSubmit" />
+    }
+</p>
+
+
+<p>
+    <h3>@Html.LabelFor(m => m.Scores)</h3>
+    <div>@string.Join(',', Model.Scores)</div>
+</p>

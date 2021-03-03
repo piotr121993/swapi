@@ -1,0 +1,6 @@
+﻿@model MovieRating.Models.MoviesViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.DropDownListFor(model => model.SelectedMovieUrl, new SelectList(Model.Movies, "Url", "Title"), "Choose a movie", new { onchange = "this.form.submit();" })
+}
